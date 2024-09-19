@@ -64,7 +64,9 @@ fun AddEditDetailView(
         ) {
         Column(modifier = Modifier
             .padding(it)
-            .wrapContentSize(),
+            .wrapContentSize()
+            .fillMaxSize()
+            .background(Color.Red),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
