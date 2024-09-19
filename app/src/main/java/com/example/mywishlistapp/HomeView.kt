@@ -56,7 +56,6 @@ fun HomeView(
                 contentColor = Color.White,
                 backgroundColor = Color.Black,
                 onClick = {
-                    Toast.makeText(context, "FAButton Clicked", Toast.LENGTH_LONG).show()
                     navController.navigate(Screen.AddScreen.route + "/0L")
 
                 }) {
@@ -68,7 +67,8 @@ fun HomeView(
         val wishlist = viewModel.getAllWishes.collectAsState(initial = listOf())
         LazyColumn(modifier = Modifier
             .fillMaxSize()
-            .padding(it)){
+            .padding(it)
+            .background(Color.Red)){
             items(wishlist.value, key={wish-> wish.id} ){
                     wish ->
                 val dismissState = rememberDismissState(
@@ -124,7 +124,7 @@ fun WishItem(wish: Wish, onClick: () -> Unit){
             onClick()
         },
         elevation = 10.dp,
-        backgroundColor = Color.White
+        backgroundColor = Color.Cyan
     ) {
         Column(modifier = Modifier.padding(16.dp)){
             Text(text = wish.title, fontWeight = FontWeight.ExtraBold)
