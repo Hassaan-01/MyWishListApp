@@ -108,6 +108,7 @@ fun AddEditDetailView(
 
                 scope.launch{
                   scaffoldState.snackbarHostState.showSnackbar(snackMessage.value)
+                    kotlinx.coroutines.delay(1000)
                     navController.navigateUp()
                 }
             }){
